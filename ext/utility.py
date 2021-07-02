@@ -27,7 +27,7 @@ def welcome_message():
 ░ ░      ░    ░   ▒   ░ ░░ ░ ░         ░  ░░ ░   ░   ░        ░ ░░ ░ 
     ░  ░   ░  ░     ░  ░░  ░   ░ ░       ░  ░  ░   ░  ░░ ░      ░  ░   
                             ░                       ░               
-                    {Fore.YELLOW}Developed by Ramses - Licence MIT{Fore.RED}
+                    {Fore.YELLOW}Developed by Ahmosys - Licence MIT{Fore.RED}
                 
                         • 1 - Search by E-mail
                         • 2 - Search by Username
