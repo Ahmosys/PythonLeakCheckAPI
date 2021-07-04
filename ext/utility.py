@@ -64,3 +64,18 @@ Date : {element["last_breach"]}
                 )
     except AssertionError:
         print("\n[🚫] There is an error in your search, please check the syntax. [🚫]")
+        
+def choice_continue():
+	choice_user = input(
+f"""\nWould you want to continue searching ?
+{Fore.YELLOW}[🚀] Enter Y(yes) or N(no) >> {Fore.RESET}"""
+	)
+	if choice_user.lower() not in ("y", "yes"):
+		clear()
+		print(
+		    f"[🤙] {Fore.RED}G{Fore.YELLOW}o{Fore.GREEN}o{Fore.CYAN}d {Fore.MAGENTA}b{Fore.RED}y{Fore.YELLOW}e{Fore.GREEN}!{Fore.RESET}\n"
+		)
+		return False
+	else:
+		clear()
+		return True
