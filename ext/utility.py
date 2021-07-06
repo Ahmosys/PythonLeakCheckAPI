@@ -1,5 +1,7 @@
+import time
 import os
 import sys
+import requests
 
 from leakcheck import LeakCheckAPI
 from dotenv import load_dotenv
@@ -10,8 +12,22 @@ api = LeakCheckAPI()
 api.set_key(os.getenv("API_KEY_LEAK_CHECK"))
 
 
+def is_connected():
+    try:
+        return requests.get("https://google.com")
+    except:
+        return False
+
+
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
+
+
+def sprint(str):
+   for c in str + '\n':
+     sys.stdout.write(c)
+     sys.stdout.flush()
+     time.sleep(3./90)
 
 
 def welcome_message():
@@ -64,6 +80,9 @@ Date : {element["last_breach"]}
                 )
     except AssertionError:
         print("\n[🚫] There is an error in your search, please check the syntax. [🚫]")
+    except requests.exceptions.ConnectionError:
+        print("\n[🚫] Please check your internet connection. [🚫]")
+        
         
 def choice_continue():
 	choice_user = input(
